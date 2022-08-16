@@ -1,12 +1,34 @@
-import React from "react";
+import React,{useState} from "react";
 import "./../styles/App.css";
+import { List } from "./List";
 
 function App() 
 {
+	const [task,setTask]=useState([]);
+	const [list,setLIst]=useState('');
+	const [toggle,setToggle]=useState(false);
+	
+	function handleClick(){
+		setTask([...task, list])
+		setLIst('');
+	}
+	let i;
+	function deletelist(i){
+		i=i;
+		setTask(task.filter((item)=>{return item!==task[i]}));
+	}
+	
 	return (
 	<div id="main">
-	//Do not alter main div
-	//Please do not alter the functional component as tests depend on the type of component.
+	<textarea id="task" onChange={e=>setLIst(e.target.value)} value={list}/>
+	<button id="btn" onClick={handleClick}>Add</button>
+	<div>
+		{task.map((item,i)=>{return (<><List key={i} id={i} item={item}/>
+		<button onClick={(item,i)=>{setTask(task.filter((item,i)=>{return task[i]!==item}))}}>Delete</button>
+		</>)
+		})}
+
+	</div>
 	</div>
 	);
 }
