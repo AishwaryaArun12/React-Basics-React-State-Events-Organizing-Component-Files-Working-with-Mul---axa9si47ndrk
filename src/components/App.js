@@ -20,7 +20,7 @@ function App()
 	
 	return (
 	<div id="main">
-	<textarea id="task" onChange={e=>setLIst(e.target.value)} value={list}/>
+	<textarea id="task" onChange={e=>{if(e.target.value!==''){setLIst(e.target.value)}}} value={list}/>
 	<button id="btn" onClick={handleClick}>Add</button>
 	<div>
 		{task.map((item,i)=>{return (<><List key={i}  id={i} item={item} />
