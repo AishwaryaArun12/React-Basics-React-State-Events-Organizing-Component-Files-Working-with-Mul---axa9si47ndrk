@@ -13,7 +13,7 @@ export const List = (props) => {
     
   return (
     <div>
-        <li>{item}</li>
+        <li className='list'>{item}</li>
         <button onClick={edit}>Edit</button>
         {!toggle&&<><textarea value={item} onChange={(e)=>{setItem(e.target.value)}}></textarea><button onClick={save}>save</button></>}
     </div>

@@ -23,7 +23,7 @@ function App()
 	<textarea id="task" onChange={e=>setLIst(e.target.value)} value={list}/>
 	<button id="btn" onClick={handleClick}>Add</button>
 	<div>
-		{task.map((item,i)=>{return (<><List key={i} id={i} item={item}/>
+		{task.map((item,i)=>{return (<><List key={i}  id={i} item={item} />
 		<button onClick={(item,i)=>{setTask(task.filter((item,i)=>{return task[i]!==item}))}}>Delete</button>
 		</>)
 		})}
