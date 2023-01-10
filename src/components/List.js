@@ -9,12 +9,18 @@ export const List = (props) => {
     function save(){
         setToggle(true);
     }
-    
+    let i;
+	function deletelist(i){
+		i=i;
+		setTask(task.filter((item)=>{return item!==task[i]}));
+	}
     
   return (
     <div>
         <li className='list'>{item}</li>
-        <button className='edit' onClick={edit}>Edit</button>
+       {toggle &&<><button className='edit' onClick={edit}>Edit</button>
+       <button className="delete" onClick={(item,i)=>{
+        setTask(task.filter((item,i)=>{return task[i]!==item}))}}>Delete</button></>}
         {!toggle&&<><textarea className='edittask' value={item} onChange={(e)=>{if(
           e.target.value!==''){
           setItem(e.target.value)}}}></textarea>

@@ -14,11 +14,7 @@ function App()
 		}
 		setLIst('');
 	}
-	let i;
-	function deletelist(i){
-		i=i;
-		setTask(task.filter((item)=>{return item!==task[i]}));
-	}
+	
 	
 	return (
 	<div id="main">
@@ -28,8 +24,7 @@ function App()
 	<div>
 		{task.map((item,i)=>{return (<>
 		<List key={i}  id={i} item={item} classname="list"/>
-		<button className="delete" onClick={(item,i)=>{
-			setTask(task.filter((item,i)=>{return task[i]!==item}))}}>Delete</button>
+		
 		</>)
 		})}
 
