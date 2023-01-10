@@ -27,8 +27,8 @@ function App()
 	<button id="btn" onClick={handleClick}>Add</button>
 	<div>
 		{task.map((item,i)=>{return (<>
-		<List key={i}  id={i} item={item} />
-		<button onClick={(item,i)=>{
+		<List key={i}  id={i} item={item} classname="list"/>
+		<button className="delete" onClick={(item,i)=>{
 			setTask(task.filter((item,i)=>{return task[i]!==item}))}}>Delete</button>
 		</>)
 		})}

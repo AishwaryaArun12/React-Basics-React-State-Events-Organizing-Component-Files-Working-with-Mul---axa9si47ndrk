@@ -14,8 +14,11 @@ export const List = (props) => {
   return (
     <div>
         <li className='list'>{item}</li>
-        <button onClick={edit}>Edit</button>
-        {!toggle&&<><textarea value={item} onChange={(e)=>{if(e.target.value!==''){setItem(e.target.value)}}}></textarea><button onClick={save}>save</button></>}
+        <button className='edit' onClick={edit}>Edit</button>
+        {!toggle&&<><textarea className='edittask' value={item} onChange={(e)=>{if(
+          e.target.value!==''){
+          setItem(e.target.value)}}}></textarea>
+          <button className='saveTask' onClick={save}>save</button></>}
     </div>
    
   )
