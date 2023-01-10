@@ -9,7 +9,9 @@ function App()
 	const [toggle,setToggle]=useState(false);
 	
 	function handleClick(){
+		if(list!=""){
 		setTask([...task, list])
+		}
 		setLIst('');
 	}
 	let i;
@@ -20,11 +22,14 @@ function App()
 	
 	return (
 	<div id="main">
-	<textarea id="task" onChange={e=>{if(e.target.value!==''){setLIst(e.target.value)}}} value={list}/>
+	<textarea id="task" onChange={e=>{if(e.target.value!==''){
+		setLIst(e.target.value)}}} value={list}/>
 	<button id="btn" onClick={handleClick}>Add</button>
 	<div>
-		{task.map((item,i)=>{return (<><List key={i}  id={i} item={item} />
-		<button onClick={(item,i)=>{setTask(task.filter((item,i)=>{return task[i]!==item}))}}>Delete</button>
+		{task.map((item,i)=>{return (<>
+		<List key={i}  id={i} item={item} />
+		<button onClick={(item,i)=>{
+			setTask(task.filter((item,i)=>{return task[i]!==item}))}}>Delete</button>
 		</>)
 		})}
 
