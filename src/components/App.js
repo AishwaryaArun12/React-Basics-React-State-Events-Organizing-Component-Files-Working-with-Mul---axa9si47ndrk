@@ -15,6 +15,12 @@ function App()
 		setLIst('');
 	}
 	
+	function deletelist(e){
+		console.log(e.target.getAttribute("name"));
+		const name=e.target.getAttribute("name")
+		setTask(task.filter((item)=>{return item!==name}));
+	}
+	
 	
 	return (
 	<div id="main">
@@ -23,11 +29,10 @@ function App()
 	<button id="btn" onClick={handleClick}>Add</button>
 	<div>
 		{task.map((item,i)=>{return (<>
-		<List key={i}  id={i} item={item} classname="list"/>
-		
+		<List key={i}  id={i} item={item}/>	
+		<button id="delete" name={item} onClick={deletelist}>Delete</button>	
 		</>)
 		})}
-
 	</div>
 	</div>
 	);
