@@ -25,13 +25,14 @@ function App()
 	return (
 	<div id="main">
 	<textarea id="task" onChange={e=>{if(e.target.value!==''){
-		setLIst(e.target.value)}}} value={list}/>
-	<button id="btn" onClick={handleClick}>Add</button>
+		setLIst(e.target.value)}}} value={list}/><br/>
+	<button id="btn" onClick={handleClick}>Add</button><br/>
 	<div>
-		{task.map((item,i)=>{return (<>
-		<List key={i}  id={i} item={item}/>	
-		<button id="delete" name={item} onClick={deletelist}>Delete</button>	
-		</>)
+		{task.map((item,i)=>{return (<div className="div">
+		<List key={i}  id={i} item={item}/>	<br/>
+		<button className="delete" name={item} onClick={deletelist}>Delete</button>
+		
+		</div>)
 		})}
 	</div>
 	</div>

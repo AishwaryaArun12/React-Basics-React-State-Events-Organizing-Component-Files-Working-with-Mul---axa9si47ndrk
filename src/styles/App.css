@@ -14,3 +14,44 @@ button{
 .bg-pink{
 	background-color:pink;
 }
+#task{
+    width: 50vh;
+    height: 10vh;
+    outline-style: double;
+    font-size: large;
+}
+#btn{
+  margin-left: 17vh;
+  padding: 10px;
+  font-size: larger;
+  background-color: antiquewhite;
+  color: black;
+}
+.div{
+    width: 50vh;
+    display: flex;
+    align-items: baseline;
+}
+.delete{
+    padding: 8px;
+   
+}
+.edittask{
+   width: 50vh;
+    height: 10vh;
+    outline-style: double;
+    font-size: large;  
+}
+.saveTask{
+    color: black;
+    padding: 5px;
+    background-color: antiquewhite;
+}
+#main{
+    border: 2px solid black;
+    padding: 5px;
+    width: 80vh;
+}
+li{
+    margin: 2vh;
+}

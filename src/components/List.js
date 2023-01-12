@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import "./../styles/App.css";
 
 export const List = (props) => {
     const [toggle,setToggle]=useState(true);
@@ -12,13 +13,16 @@ export const List = (props) => {
     
     
   return (
-    <div>
-        <li className='list'>{item}</li>
-       {toggle &&<button className='edit' onClick={edit}>Edit</button>}
+    <>
+    <div className='div'>
+    {toggle && <><li key={props.id} className='list'>{item}</li>
+    <div><button className='edit' onClick={edit}>Edit</button></div></>}
+       </div>
+       <div>
         {!toggle&&<><textarea className='edittask' value={item} onChange={(e)=>{
-          setItem(e.target.value)}}></textarea>
-          <button className='saveTask' disabled={item==''} onClick={save}>save</button></>}
-    </div>
-   
+          setItem(e.target.value)}}/><br/>
+        <button className='saveTask' disabled={item==''} onClick={save}>save</button></>}
+        </div>
+    </>
   )
 }
